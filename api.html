@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>API</h1>
+
+
+
+    <script>
+
+
+        const url = "http://127.0.0.1:8000/"
+
+        fetch(url)
+            .then((response) => response.json())
+            .then((data) => console.log(data));
+
+        function loadPost(data) {
+
+            data.map((post) => {
+                let dom = `<ul>
+                        <li>${post.title}</li>
+                        <li>${post.content}</li>
+                   <ul>
+                    `
+
+                document.body.innerHTML = dom;
+            })
+        }
+
+
+    </script>
+</body>
+
+</html>
